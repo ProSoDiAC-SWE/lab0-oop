@@ -1,0 +1,143 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  margin: 5px 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.event {
+  margin: 5px 0 0 0;
+  font-size: 1rem;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.language-toggle {
+  display: none; /* rimosso: solo IT */
+}
+
+.lang-btn {
+  display: none;
+}
+
+/* Classroom nav link highlight */
+.nav-link-classroom {
+  color: #28a745 !important;
+  font-weight: 600 !important;
+}
+
+.nav-link-classroom.active {
+  border-bottom-color: #28a745 !important;
+}
+
+.navigation {
+  background: white;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+}
+
+.nav-link {
+  color: #555;
+  text-decoration: none;
+  padding: 15px 0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover {
+  color: #667eea;
+}
+
+.nav-link.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+.main-content {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 40px 0;
+}
+
+.footer {
+  background: #343a40;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content p {
+  margin: 5px 0;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .logo h1 {
+    font-size: 2rem;
+  }
+  
+  .nav-content {
+    padding: 0 10px;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+  }
+  
+  .main-content {
+    padding: 20px 0;
+  }
+}
