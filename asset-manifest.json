@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/workshop-git-site/static/css/main.8da7c60b.css",
+    "main.js": "/workshop-git-site/static/js/main.09581a49.js",
+    "index.html": "/workshop-git-site/index.html",
+    "main.8da7c60b.css.map": "/workshop-git-site/static/css/main.8da7c60b.css.map",
+    "main.09581a49.js.map": "/workshop-git-site/static/js/main.09581a49.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8da7c60b.css",
+    "static/js/main.09581a49.js"
+  ]
+}
