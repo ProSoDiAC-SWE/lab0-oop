@@ -1,124 +1,239 @@
-.App {
-  text-align: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+:root {
+  /* UniME Ingegneria palette */
+  --primary: #0060A9;
+  --primary-dark: #004880;
+  --primary-light: #1a80cc;
+  --primary-xlight: #e8f3fc;
+  --accent: #00963C;
+  /* verde istituzionale per classroom */
+  --accent-dark: #006e2b;
+  --warning: #e67e00;
+  --danger: #c0392b;
+
+  /* Backgrounds — light/clean */
+  --bg: #f4f6f8;
+  --bg-card: #ffffff;
+  --bg-surface: #eef2f7;
+  --bg-elevated: #dde8f5;
+
+  /* Text */
+  --text: #1a2433;
+  --text-muted: #4a5568;
+  --text-dim: #8898aa;
+
+  /* Borders */
+  --border: rgba(0, 96, 169, 0.15);
+  --border-hover: rgba(0, 96, 169, 0.4);
+
+  /* Code — dark terminal staccato sul chiaro */
+  --code-bg: #0d1117;
+  --code-text: #79c0ff;
+  --code-green: #56d364;
+  --code-comment: #8b949e;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 6px rgba(0, 60, 120, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 60, 120, 0.12);
+  --shadow-glow: 0 0 20px rgba(0, 96, 169, 0.2);
+  --shadow-glow-accent: 0 0 20px rgba(0, 150, 60, 0.2);
+
+  /* Font */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-code: 'Fira Code', 'Consolas', monospace;
+  --font-size-base: 16px;
+
+  /* Spacing */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Transitions */
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.App-header {
-  background-color: #282c34;
-  padding: 20px;
-  color: white;
-}
-
-.content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  margin: 20px 0;
-  text-align: left;
-}
-
-.card h1 {
-  color: #333;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #667eea;
-  padding-bottom: 10px;
-}
-
-.card h2 {
-  color: #555;
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-
-.card h3 {
-  color: #666;
-  margin-top: 25px;
-  margin-bottom: 10px;
-}
-
-.card p {
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: #444;
-}
-
-.card ul, .card ol {
-  margin-bottom: 20px;
-  padding-left: 30px;
-}
-
-.card li {
-  margin-bottom: 8px;
-  line-height: 1.5;
-}
-
-.code-block {
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 5px;
-  padding: 15px;
-  margin: 15px 0;
-  font-family: 'Courier New', monospace;
-  overflow-x: auto;
-}
-
-.code-block code {
-  background: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
   padding: 0;
-  font-size: 14px;
 }
 
-.inline-code {
-  background: #f8f9fa;
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-family: 'Courier New', monospace;
-  font-size: 14px;
-  color: #e83e8c;
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.highlight {
-  background: #fff3cd;
-  border: 1px solid #ffeaa7;
-  border-radius: 5px;
-  padding: 15px;
-  margin: 15px 0;
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.highlight h4 {
-  margin-top: 0;
-  color: #856404;
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
 }
 
-.link {
-  color: #667eea;
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 96, 169, 0.18);
+  color: var(--text);
+}
+
+/* Inline code */
+code {
+  font-family: var(--font-code);
+  font-size: 0.9em;
+}
+
+/* Links */
+a {
+  color: var(--primary);
   text-decoration: none;
-  font-weight: 500;
+  transition: color var(--transition);
 }
 
-.link:hover {
-  text-decoration: underline;
+a:hover {
+  color: var(--primary-dark);
 }
 
-@media (max-width: 768px) {
-  .content {
-    padding: 10px;
+/* Focus */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .card {
-    padding: 20px;
-    margin: 10px 0;
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .card ul, .card ol {
-    padding-left: 20px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
   }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* ===== PRESENTATION MODE CONTROLS ===== */
+.presentation-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 12px 22px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 96, 169, 0.35);
+  transition: all var(--transition);
+  letter-spacing: 0.02em;
+}
+
+.presentation-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 96, 169, 0.5);
+}
+
+.presentation-btn.active {
+  background: linear-gradient(135deg, #374151, #1f2937);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.presentation-nav {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+  box-shadow: var(--shadow-md);
+}
+
+.slide-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-btn:hover:not(:disabled) {
+  background: var(--primary-xlight);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.slide-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.slide-counter {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  min-width: 60px;
+  text-align: center;
+}
+
+.slide-current {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.slide-sep {
+  color: var(--text-dim);
+}
+
+.slide-total {
+  color: var(--text-muted);
 }

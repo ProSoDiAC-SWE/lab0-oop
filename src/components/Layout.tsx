@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import PresentationMode from './PresentationMode';
 import './Layout.css';
 
 interface LayoutProps {
@@ -11,9 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { t } = useLanguage();
   const location = useLocation();
 
-  const isActive = (path: string) => {
-    return location.pathname === path;
-  };
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <div className="layout">
@@ -29,46 +28,22 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       <nav className="navigation">
         <div className="nav-content">
-          <Link
-            to="/"
-            className={`nav-link ${isActive('/') ? 'active' : ''}`}
-          >
+          <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
             {t.nav.home}
           </Link>
-          <Link
-            to="/intro"
-            className={`nav-link ${isActive('/intro') ? 'active' : ''}`}
-          >
+          <Link to="/intro" className={`nav-link ${isActive('/intro') ? 'active' : ''}`}>
             {t.nav.intro}
           </Link>
-          <Link
-            to="/lab1"
-            className={`nav-link ${isActive('/lab1') ? 'active' : ''}`}
-          >
+          <Link to="/lab1" className={`nav-link ${isActive('/lab1') ? 'active' : ''}`}>
             {t.nav.lab1}
           </Link>
-          <Link
-            to="/lab2"
-            className={`nav-link ${isActive('/lab2') ? 'active' : ''}`}
-          >
+          <Link to="/lab2" className={`nav-link ${isActive('/lab2') ? 'active' : ''}`}>
             {t.nav.lab2}
           </Link>
-          <Link
-            to="/lab3"
-            className={`nav-link ${isActive('/lab3') ? 'active' : ''}`}
-          >
+          <Link to="/lab3" className={`nav-link ${isActive('/lab3') ? 'active' : ''}`}>
             {t.nav.lab3}
           </Link>
-          <Link
-            to="/classroom"
-            className={`nav-link nav-link-classroom ${isActive('/classroom') ? 'active' : ''}`}
-          >
-            {t.nav.classroom}
-          </Link>
-          <Link
-            to="/resources"
-            className={`nav-link ${isActive('/resources') ? 'active' : ''}`}
-          >
+          <Link to="/resources" className={`nav-link ${isActive('/resources') ? 'active' : ''}`}>
             {t.nav.resources}
           </Link>
         </div>
@@ -84,6 +59,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <p>Materiale didattico per il corso di Programmazione ad Oggetti @ Unime</p>
         </div>
       </footer>
+
+      {/* Presentation mode — floating controls */}
+      <PresentationMode />
     </div>
   );
 };

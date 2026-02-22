@@ -80,7 +80,7 @@ const Resources: React.FC = () => {
 
         <section className="commands-section">
           <h2>{t.commands.title}</h2>
-          
+
           {Object.entries(gitCommands).map(([category, commands]) => (
             <div key={category} className="command-category">
               <h3>{t.commands[category as keyof typeof t.commands]}</h3>
@@ -122,7 +122,7 @@ const Resources: React.FC = () => {
         <div className="highlight">
           <h4>🎓 Continua ad Apprendere</h4>
           <p>
-            Il workshop è finito, ma il tuo viaggio con Git e GitHub è appena iniziato! 
+            Il lab0 è finito, ma il tuo viaggio con Git e GitHub è appena iniziato!
             Continua a praticare, contribuisci ai progetti open source e non aver paura di sperimentare.
           </p>
         </div>

@@ -9,8 +9,8 @@ const Lab1: React.FC = () => {
     {
       part: t.lab1.part1,
       steps: [
-        "Crea una cartella chiamata `workshop-git`",
-        "Entra nella cartella `workshop-git`",
+        "Crea una cartella chiamata `lab0-git`",
+        "Entra nella cartella `lab0-git`",
         "Crea un file chiamato `intro.txt`",
         "Inizializza un repository Git vuoto",
         "Aggiungi `intro.txt` alla staging area",
@@ -89,7 +89,7 @@ const Lab1: React.FC = () => {
             <ol>
               {section.steps.map((step, stepIndex) => (
                 <li key={stepIndex}>
-                  <span dangerouslySetInnerHTML={{ 
+                  <span dangerouslySetInnerHTML={{
                     __html: step.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>')
                   }} />
                 </li>
@@ -110,7 +110,7 @@ const Lab1: React.FC = () => {
         <div className="highlight">
           <h4>🎯 Obiettivo del Lab</h4>
           <p>
-            Questo lab ti insegna i concetti fondamentali di Git: staging area, commit e gestione dei file. 
+            Questo lab ti insegna i concetti fondamentali di Git: staging area, commit e gestione dei file.
             Comprendere questi concetti è essenziale per lavorare efficacemente con Git.
           </p>
         </div>

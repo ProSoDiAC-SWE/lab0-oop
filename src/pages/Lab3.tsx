@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Lab3: React.FC = () => {
   const { t } = useLanguage();
+  const c = t.classroom;
 
   const lab3Steps = [
     {
@@ -95,6 +96,7 @@ Breve descrizione di te (2-3 righe)
         <p className="subtitle">{t.lab3.subtitle}</p>
         <p>{t.lab3.description}</p>
 
+        {/* ── PARTE 1: Fork e Pull Request ── */}
         {lab3Steps.map((section, sectionIndex) => (
           <section key={sectionIndex} className="lab-section">
             <h2>{section.title}</h2>
@@ -119,14 +121,6 @@ Breve descrizione di te (2-3 righe)
           </div>
         </section>
 
-        <div className="highlight">
-          <h4>🎯 Obiettivo del Lab</h4>
-          <p>
-            Questo lab ti introduce al flusso di lavoro collaborativo: fork, branch, commit, push e pull request.
-            Sono le stesse operazioni che utilizzerai quando il docente proporrà esercizi collaborativi nel corso.
-          </p>
-        </div>
-
         <section className="reflection-section">
           <h2>{t.lab1.reflection}</h2>
           <ul>
@@ -136,11 +130,115 @@ Breve descrizione di te (2-3 righe)
           </ul>
         </section>
 
+        {/* ── PARTE 2: GitHub Classroom ── */}
+        <hr className="section-divider" />
+
+        <section className="lab-section classroom-intro">
+          <h1>{c.title}</h1>
+          <p className="subtitle">{c.subtitle}</p>
+          <p>{c.description}</p>
+        </section>
+
+        <section className="lab-section classroom-intro">
+          <h2>📖 {c.section1Title}</h2>
+          <p>{c.section1Text}</p>
+        </section>
+
+        <section className="lab-section">
+          <h2>{c.section2Title}</h2>
+          <ol>
+            {c.section2Steps.map((step, i) => (
+              <li key={i}>
+                <span dangerouslySetInnerHTML={{
+                  __html: step.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+                }} />
+              </li>
+            ))}
+          </ol>
+          <div className="highlight">
+            <h4>💡 Il tuo repository personale</h4>
+            <p>{c.section2Note}</p>
+          </div>
+        </section>
+
+        <section className="lab-section">
+          <h2>{c.section3Title}</h2>
+          <ol>
+            {c.section3Steps.map((step, i) => (
+              <li key={i}>{step}</li>
+            ))}
+          </ol>
+          <div className="code-block">
+            <code>{c.section3Command}</code>
+          </div>
+          <ol start={5}>
+            {c.section3Steps2.map((step, i) => (
+              <li key={i}>{step}</li>
+            ))}
+          </ol>
+          <div className="code-block">
+            <code>{c.section3Command2}</code>
+          </div>
+        </section>
+
+        <section className="lab-section">
+          <h2>{c.section4Title}</h2>
+          <p>{c.section4Text}</p>
+          <div className="code-block">
+            {c.section4Commands.map((cmd, i) => (
+              <div key={i} className="command-line">
+                <code>{cmd}</code>
+              </div>
+            ))}
+          </div>
+          <div className="highlight">
+            <h4>💡 Buona pratica</h4>
+            <p>{c.section4Tip}</p>
+          </div>
+        </section>
+
+        <section className="lab-section">
+          <h2>{c.section5Title}</h2>
+          <p>{c.section5Text}</p>
+          <div className="code-block">
+            <code>{c.section5Command}</code>
+          </div>
+          <div className="highlight">
+            <h4>📅 Scadenze</h4>
+            <p>{c.section5Note}</p>
+          </div>
+        </section>
+
+        <section className="lab-section">
+          <h2>{c.section6Title}</h2>
+          <ol>
+            {c.section6Steps.map((step, i) => (
+              <li key={i}>{step}</li>
+            ))}
+          </ol>
+          <div className="highlight warning-highlight">
+            <p>{c.section6Warning}</p>
+          </div>
+        </section>
+
+        <div className="classroom-cta">
+          <h3>🚀 Pronto a iniziare?</h3>
+          <p>Accedi alla classroom del corso per trovare i tuoi assignment:</p>
+          <a
+            href={c.classroomUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-classroom btn-large"
+          >
+            {c.classroomLink} →
+          </a>
+        </div>
+
         <div className="highlight">
-          <h4>🚀 Congratulazioni!</h4>
+          <h4>🎯 Obiettivo del Lab</h4>
           <p>
-            Hai completato tutti i lab preparatori! Ora conosci i fondamentali di Git e GitHub.
-            Sei pronto per usare <strong>GitHub Classroom</strong> per ricevere e consegnare gli assignment del corso di Programmazione ad Oggetti.
+            Questo lab ti introduce al flusso di lavoro collaborativo: fork, branch, commit, push e pull request.
+            Sono le stesse operazioni che utilizzerai quando il docente proporrà esercizi tramite <strong>GitHub Classroom</strong>.
           </p>
         </div>
 
@@ -148,8 +246,8 @@ Breve descrizione di te (2-3 righe)
           <Link to="/lab2" className="btn btn-outline">
             ← Lab 2: Repository Remoti
           </Link>
-          <Link to="/classroom" className="btn btn-primary">
-            GitHub Classroom →
+          <Link to="/resources" className="btn btn-primary">
+            Risorse Utili →
           </Link>
         </div>
       </div>

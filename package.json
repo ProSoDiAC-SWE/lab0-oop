@@ -1,5 +1,5 @@
 {
-  "name": "workshop-git-site",
+  "name": "lab0-oop-site",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -43,7 +43,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://ProSoDiAC-SWE.github.io/workshop-git-site",
+  "homepage": "https://ProSoDiAC-SWE.github.io/lab0-oop",
   "devDependencies": {
     "gh-pages": "^4.0.0"
   }

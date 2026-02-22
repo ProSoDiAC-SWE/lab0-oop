@@ -23,7 +23,7 @@ const Home: React.FC = () => {
           </p>
         </div>
 
-        <div className="workshop-overview">
+        <div className="lab0-overview">
           <h2>Struttura della guida</h2>
           <div className="lab-cards">
             <div className="lab-card">
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
             <div className="lab-card lab-card-classroom">
               <h3>🎯 GitHub Classroom</h3>
               <p>Come accettare, svolgere e consegnare gli assignment del corso</p>
-              <Link to="/classroom" className="btn btn-classroom">Guida Assignment</Link>
+              <Link to="/lab3" className="btn btn-classroom">Guida Assignment</Link>
             </div>
           </div>
         </div>

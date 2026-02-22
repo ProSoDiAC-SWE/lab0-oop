@@ -24,7 +24,7 @@ const Lab2: React.FC = () => {
       steps: [
         "Vai su github.com e accedi",
         "Clicca su \"New repository\" (il pulsante verde + in alto a destra)",
-        "Nome repository: `workshop-remote`",
+        "Nome repository: `lab0-remote`",
         "Scegli: **Public** o **Private**",
         "**Non** selezionare \"Initialize this repository with a README\"",
         "Clicca \"Create repository\""
@@ -33,9 +33,9 @@ const Lab2: React.FC = () => {
     {
       title: t.lab2.pushLocal,
       steps: [
-        "Crea una nuova cartella `workshop-remote`",
+        "Crea una nuova cartella `lab0-remote`",
         "Entra nella cartella",
-        "Crea un file `README.md` con contenuto: \"# Workshop Git - Esercizio 2\"",
+        "Crea un file `README.md` con contenuto: \"# Lab0 Git - Esercizio 2\"",
         "Inizializza il repository Git",
         "Aggiungi `README.md` alla staging area",
         "Fai il commit con messaggio \"first commit\""
@@ -77,7 +77,7 @@ const Lab2: React.FC = () => {
         <section className="ssh-section">
           <h2>{t.lab2.sshSetup}</h2>
           <p>{t.lab2.sshDescription}</p>
-          
+
           <ol>
             {sshSteps.map((step, index) => (
               <li key={index}>
@@ -103,9 +103,9 @@ const Lab2: React.FC = () => {
             <ol>
               {section.steps.map((step, stepIndex) => (
                 <li key={stepIndex}>
-                  <span dangerouslySetInnerHTML={{ 
+                  <span dangerouslySetInnerHTML={{
                     __html: step.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>')
-                               .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+                      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
                   }} />
                 </li>
               ))}
