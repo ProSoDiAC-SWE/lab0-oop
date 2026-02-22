@@ -9,7 +9,7 @@ export const translations = {
       intro: "Introduzione",
       lab1: "Lab 1: Stage e Commit",
       lab2: "Lab 2: Repository Remoti",
-      lab3: "Lab 3: Fork, PR & Classroom",
+      lab3: "Lab 3: Fork e Pull Request",
       classroom: "GitHub Classroom",
       resources: "Risorse"
     },
